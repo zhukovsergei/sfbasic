@@ -47,6 +47,12 @@ services:
         ports:
             - "5432:5432"
 
+    manager-node:
+        image: node:current-alpine
+        volumes:
+            - ./app:/var/www/app
+        working_dir: /var/www/app
+
 volumes:
     pgdata:
         driver: local
