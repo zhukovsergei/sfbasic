@@ -20,6 +20,12 @@
                         <label for="inputPassword">Password</label>
                         <input type="password" name="password" id="inputPassword" class="form-control" required>
                     </div>
+                    <div class="form-check mb-3">
+                        <label>
+                            <input type="checkbox" name="_remember_me" class="form-check-input"> Remember me
+                        </label>
+                    </div>
+
                     <div class="col-12">
                         <input type="hidden" name="_csrf_token" value="{{ csrf_token('auth_csrf_token') }}">
                         <button class="btn btn-lg btn-primary float-end" type="submit">
