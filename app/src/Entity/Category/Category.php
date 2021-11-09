@@ -22,6 +22,11 @@ class Category
     private $name;
 
 
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Book\Book", mappedBy="category")
+     */
+    private $books;
+
     public static function create(string $name): self
     {
         $category = new static();
@@ -51,5 +56,15 @@ class Category
     public function setId(Id $id): void
     {
         $this->id = $id;
+    }
+
+    public function getBooks()
+    {
+        return $this->books;
+    }
+
+    public function setBooks($books): void
+    {
+        $this->books = $books;
     }
 }

@@ -19,9 +19,13 @@ class AppFixtures extends Fixture
         UserFactory::createMany(10);
 
 
-        CategoryFactory::createMany(5);
+//        $books = BookFactory::createMany(5);
 
-        BookFactory::createMany(30);
+//        CategoryFactory::createOne(['email' => 'opohmelka@fdsgn.ch']);
+
+        CategoryFactory::createMany(5, ['books' => BookFactory::new()->many(0, 10)]);
+//        BookFactory::createMany(5, ['category' => BookFactory::new()->many(0, 10)]);
+
 
         $manager->flush();
     }

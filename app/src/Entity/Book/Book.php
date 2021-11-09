@@ -21,6 +21,11 @@ class Book
      */
     private $name;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Category\Category", inversedBy="books")
+     * @ORM\JoinColumn(name="category_id", referencedColumnName="id", nullable=true, onDelete="SET NULL")
+     */
+    private $category;
 
     public static function create(string $name): self
     {
@@ -51,5 +56,15 @@ class Book
     public function setId(Id $id): void
     {
         $this->id = $id;
+    }
+
+    public function getCategory()
+    {
+        return $this->category;
+    }
+
+    public function setCategory($category): void
+    {
+        $this->category = $category;
     }
 }
