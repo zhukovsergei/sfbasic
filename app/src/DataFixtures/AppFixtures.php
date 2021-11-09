@@ -2,6 +2,7 @@
 
 namespace App\DataFixtures;
 
+use App\Factory\BookFactory;
 use App\Factory\CategoryFactory;
 use App\Factory\UserFactory;
 use Doctrine\Bundle\FixturesBundle\Fixture;
@@ -19,6 +20,8 @@ class AppFixtures extends Fixture
 
 
         CategoryFactory::createMany(5);
+
+        BookFactory::createMany(30);
 
         $manager->flush();
     }

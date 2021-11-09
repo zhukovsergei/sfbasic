@@ -10,6 +10,7 @@ doctrine:
 
         types:
             category_id: 'App\Entity\Category\IdType'
+            book_id: 'App\Entity\Book\IdType'
 
     orm:
         auto_generate_proxy_classes: true
